@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN" "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- DB Settings -->
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- Connection Settings -->
+		<property name="hibernate.connection.url">jdbc:postgresql://ec2-54-221-225-242.compute-1.amazonaws.com:5432/dq8jp0ljljm6q?user=tqfwytwxmqyadl&amp;password=1Z2rflmi_OKqMTYppZhWkRyKIE&amp;ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</property>
+		<property name="hibernate.connection.username">tqfwytwxmqyadl</property>
+		<property name="hibernate.connection.password"> 1Z2rflmi_OKqMTYppZhWkRyKIE</property>
+		<property name="hibernate.connection.pool_size">30</property>
+		<property name="hibernate.connection.shutdown">true</property>
+		<property name="hibernate.lazy">false</property>
+
+
+		<!-- Connection Management With C3P0 -->
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.max_statements">100</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+
+		<!-- Transactions Acceleration -->
+		<property name="hibernate.transaction.coordinator_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- Entities Mapping -->
+		<mapping class="com.kbhkn.model.Order" />
+		<mapping class="com.kbhkn.model.Product" />
+		<mapping class="com.kbhkn.model.User" />
+
+	</session-factory>
+</hibernate-configuration>
