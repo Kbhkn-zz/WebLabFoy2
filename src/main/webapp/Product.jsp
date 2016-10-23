@@ -114,8 +114,8 @@
                                                 <td>${p.productName}</td>
                                                 <td>${p.productInfo}</td>
                                                 <td>${p.productPrice} ₺</td>
-                                                <td><a href="productProcess.do?productId=${p.productId}&processType=delete" class="btn btn-danger btn-sm">Sil <i class="glyphicon glyphicon-trash" aria-hidden="true"></i></a></td>
-                                                <td><a href="#" data-toggle="modal" data-target="#EditProductModal" class="btn btn-primary btn-sm" data-product-id="${p.productId}" data-product-name="${p.productName}" data-product-info="${p.productInfo}" data-product-price="${p.productPrice}"> Güncelle <i class="glyphicon glyphicon-refresh" aria-hidden="true"></i></a></td>
+                                                <td><a href="productProcess.do?productId=${p.productId}&processType=delete" class="btn btn-danger btn-sm">Delete <i class="glyphicon glyphicon-trash" aria-hidden="true"></i></a></td>
+                                                <td><a href="#" data-toggle="modal" data-target="#EditProductModal" class="btn btn-primary btn-sm" data-product-id="${p.productId}" data-product-name="${p.productName}" data-product-info="${p.productInfo}" data-product-price="${p.productPrice}"> Update <i class="glyphicon glyphicon-refresh" aria-hidden="true"></i></a></td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>

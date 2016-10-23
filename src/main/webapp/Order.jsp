@@ -33,8 +33,8 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="User.jsp">User</a></li>
-                    <li class="active"><a href="Product.jsp">Product</a></li>
-                    <li><a href="Order.jsp">Order</a></li>
+                    <li><a href="Product.jsp">Product</a></li>
+                    <li class="active"><a href="Order.jsp">Order</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                 </ul>
@@ -129,7 +129,7 @@
                                                 <td>${o.orderDate}</td>
                                                 <td>${o.orderCount}</td>
                                                 <td>${o.product.productPrice * o.orderCount} ₺</td>
-                                                <td><a href="orderProcess.do?orderId=${o.orderId}&processType=delete" class="btn btn-danger btn-sm">Sil  <i class="glyphicon glyphicon-trash" aria-hidden="true"></i></a></td>
+                                                <td><a href="orderProcess.do?orderId=${o.orderId}&processType=delete" class="btn btn-danger btn-sm">Delete  <i class="glyphicon glyphicon-trash" aria-hidden="true"></i></a></td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>

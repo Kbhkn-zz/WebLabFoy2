@@ -30,8 +30,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="User.jsp">User</a></li>
-                    <li class="active"><a href="Product.jsp">Product</a></li>
+                    <li class="active"><a href="User.jsp">User</a></li>
+                    <li><a href="Product.jsp">Product</a></li>
                     <li><a href="Order.jsp">Order</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -104,8 +104,8 @@
                                                 <td>${u.userId}</td>
                                                 <td>${u.username}</td>
                                                 <td>${u.password}</td>
-                                                <td><a href="userProcess.do?userId=${u.userId}&processType=delete" class="btn btn-danger btn-sm">Sil  <i class="glyphicon glyphicon-trash" aria-hidden="true"></i></a></td>
-                                                <td><a href="#" data-toggle="modal" data-target="#EditUserModal" class="btn btn-primary btn-sm" data-user-id="${u.userId}" data-user-name="${u.username}"> Güncelle <i class="glyphicon glyphicon-refresh" aria-hidden="true"></i></a></td>
+                                                <td><a href="userProcess.do?userId=${u.userId}&processType=delete" class="btn btn-danger btn-sm">Delete  <i class="glyphicon glyphicon-trash" aria-hidden="true"></i></a></td>
+                                                <td><a href="#" data-toggle="modal" data-target="#EditUserModal" class="btn btn-primary btn-sm" data-user-id="${u.userId}" data-user-name="${u.username}"> Update <i class="glyphicon glyphicon-refresh" aria-hidden="true"></i></a></td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
