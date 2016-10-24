@@ -90,8 +90,8 @@
 					<showDeprecation>true</showDeprecation>
 				</configuration>
 			</plugin>
-			
-			<!-- For Heroku Embedded Tomcat/Jetty-->
+
+			<!-- For Heroku Embedded Tomcat/Jetty -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -105,10 +105,10 @@
 						<configuration>
 							<artifactItems>
 								<artifactItem>
-									<groupId>org.eclipse.jetty</groupId>
-									<artifactId>jetty-runner</artifactId>
-									<version>9.3.13.v20161014</version>
-									<destFileName>jetty-runner.jar</destFileName>
+									<groupId>com.github.jsimone</groupId>
+									<artifactId>webapp-runner</artifactId>
+									<version>8.0.33.2</version>
+									<destFileName>webapp-runner.jar</destFileName>
 								</artifactItem>
 							</artifactItems>
 						</configuration>
