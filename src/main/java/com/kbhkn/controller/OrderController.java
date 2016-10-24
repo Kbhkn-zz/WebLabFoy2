@@ -36,15 +36,19 @@ public class OrderController extends HttpServlet {
 
 		String type = request.getParameter("processType");
 
-		switch (type) {
-		case "add":
-			addNewOrder(request, service, response);
-			break;
+		try {
+			if (type != null) {
+				switch (type) {
+				case "add":
+					addNewOrder(request, service, response);
+					break;
 
-		case "update":
-			updateOrder(request, service, response);
-			break;
-		}
+				case "delete":
+					deleteOrder(request, service, response);
+					break;
+				}
+			}
+		} catch (Exception e) {}
 		
 		request.getRequestDispatcher("Order.jsp").forward(request, response);
 	}
@@ -59,14 +63,7 @@ public class OrderController extends HttpServlet {
 		dao.save(o);
 	}
 	
-	private static void updateOrder(HttpServletRequest request, GenericService dao, HttpServletResponse response) throws ServletException, IOException {
-		Order o = new Order();
-		o.setOrderId(Integer.parseInt(request.getParameter("orderId")));
-		o.setUser(new User(Integer.parseInt(request.getParameter("userId"))));
-		o.setProduct(new Product(Integer.parseInt(request.getParameter("productId"))));
-		o.setOrderDate(new Date());
-		o.setOrderCount(Integer.parseInt(request.getParameter("qty")));
-		
-		dao.update(o);
+	private static void deleteOrder(HttpServletRequest request, GenericService dao, HttpServletResponse response) throws ServletException, IOException {
+		dao.delete(Order.class, Integer.parseInt(request.getParameter("orderId")));
 	}
 }

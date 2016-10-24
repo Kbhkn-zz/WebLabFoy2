@@ -32,20 +32,24 @@ public class UserController extends HttpServlet {
 		GenericService service = new GenericServiceImpl();
 
 		String type = request.getParameter("processType");
+		
+		try {
+			if (type != null) {
+				switch (type) {
+				case "add":
+					addNewUser(request, service, response);
+					break;
 
-		switch (type) {
-		case "add":
-			addNewUser(request, service, response);
-			break;
+				case "update":
+					updateUser(request, service, response);
+					break;
 
-		case "update":
-			updateUser(request, service, response);
-			break;
-
-		case "delete":
-			deleteUser(request, service, response);
-			break;
-		}
+				case "delete":
+					deleteUser(request, service, response);
+					break;
+				}
+			}
+		} catch (Exception e) {}
 		
 		request.getRequestDispatcher("User.jsp").forward(request, response);
 	}

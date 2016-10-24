@@ -33,19 +33,23 @@ public class ProductController extends HttpServlet {
 
 		String type = request.getParameter("processType");
 
-		switch (type) {
-		case "add":
-			addNewProduct(request, service, response);
-			break;
+		try {
+			if (type != null) {
+				switch (type) {
+				case "add":
+					addNewProduct(request, service, response);
+					break;
 
-		case "update":
-			updateProduct(request, service, response);
-			break;
+				case "update":
+					updateProduct(request, service, response);
+					break;
 
-		case "delete":
-			deleteProduct(request, service, response);
-			break;
-		}
+				case "delete":
+					deleteProduct(request, service, response);
+					break;
+				}
+			}
+		} catch (Exception e) {}
 		
 		request.getRequestDispatcher("Product.jsp").forward(request, response);
 	}
